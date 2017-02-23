@@ -1,0 +1,296 @@
+// @font-face {
+// 	font-family: 'Message';
+// 	src: url("../fonts/Message.ttf");
+// }
+//
+// body {
+// 	text-align: center;
+// }
+//
+// // #Layer_1 {
+// //   enable-background: new 0 0 784 748.9;
+// // }
+//
+// svg {
+// 	transform: scale(0.6);
+// 	width: 100%;
+// 	height: 100%;
+// }
+//
+// @media only screen and (min-width: 1300px) {
+// 	svg {
+// 	}
+// }
+//
+// @media only screen and (max-width: 767px) {
+// 	svg {
+// 		transform: scale(0.8);
+// 	}
+// }
+
+.page-wrapper {
+	padding-top: 30px;
+}
+
+svg {
+	min-height: 500px;
+	height: 60vh;
+	padding: 30px;
+}
+
+@media only screen and (max-width: 992px) {
+	svg {
+		width: 100%;
+	}
+}
+
+$pink: #f7aecc;
+$purple: #dabddb;
+$blue: #98caeb;
+$green: #a9dac7;
+$orange: #fbc084;
+$yellow: #fff58c;
+
+.pink {
+	background-color: $pink;
+}
+
+#pink {
+	fill: $pink;
+
+	#Fill-1,
+	#Fill-2,
+	#Fill-3,
+	#Fill-9,
+	#Fill-15 {
+		fill:darken($pink,40%);
+	}
+
+	#Fill-6,
+	#Fill-12,
+	#Fill-18 {
+		fill: $pink;
+	}
+}
+
+.purple {
+	background-color: $purple;
+}
+
+#purple {
+	fill: $purple;
+
+	#Fill-1,
+	#Fill-2,
+	#Fill-3,
+	#Fill-9,
+	#Fill-15 {
+		fill:darken($purple,40%);
+	}
+
+	#Fill-6,
+	#Fill-12,
+	#Fill-18 {
+		fill: $purple;
+	}
+}
+
+.blue {
+	background-color: $blue;
+}
+
+#blue {
+	fill: $blue;
+
+	#Fill-1,
+	#Fill-2,
+	#Fill-3,
+	#Fill-9,
+	#Fill-15 {
+		fill:darken($blue,40%);
+	}
+
+	#Fill-6,
+	#Fill-12,
+	#Fill-18 {
+		fill: $blue;
+	}
+}
+
+.green {
+	background-color: $green;
+}
+
+#green {
+	fill: $green;
+
+	#Fill-1,
+	#Fill-2,
+	#Fill-3,
+	#Fill-9,
+	#Fill-15 {
+		fill:darken($green,40%);
+	}
+
+	#Fill-6,
+	#Fill-12,
+	#Fill-18 {
+		fill: $green;
+	}
+}
+
+.orange {
+	background-color: $orange;
+}
+
+#orange {
+	fill: $orange;
+
+	#Fill-1,
+	#Fill-2,
+	#Fill-3,
+	#Fill-9,
+	#Fill-15 {
+		fill:darken($orange,40%);
+	}
+
+	#Fill-6,
+	#Fill-12,
+	#Fill-18 {
+		fill: $orange;
+	}
+}
+
+.yellow {
+	background-color: $yellow;
+}
+
+#yellow {
+	fill: $yellow;
+
+	#Fill-1,
+	#Fill-2,
+	#Fill-3,
+	#Fill-9,
+	#Fill-15 {
+		fill:darken($yellow,40%);
+	}
+
+	#Fill-6,
+	#Fill-12,
+	#Fill-18 {
+		fill: $yellow;
+	}
+}
+
+body {
+	background-color: #eee;
+	text-align: center;
+}
+
+.picker div {
+	width: 90px;
+	height: 90px;
+	display: inline-block;
+}
+
+.picker {
+	margin: 0 auto;
+	width: 80vw;
+}
+
+@media only screen and (max-width: 992px) {
+	.picker div{
+		width: 75px;
+		height: 75px;
+		margin: 8px;
+	}
+}
+
+.picker div:hover {
+	opacity: 0.7;
+	cursor: hand;
+}
+
+
+
+input {
+	text-align: center;
+	color: #CA0231;
+	background-color:transparent;
+	border: none;
+	position: absolute;
+	width: 30vw;
+	height: auto;
+	top: 125px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	text-transform: uppercase;
+	font-size: 4vw;
+	font-family: Helvetica;
+}
+
+@media only screen and (max-width: 992px) {
+	input {
+		width: 55vw;
+		font-size: 6.5vw;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	input {
+		top: 25vh;
+		width: 55vw;
+		font-size: 6.5vw;
+	}
+}
+
+.fnc-button {
+	padding: 10px 20px;
+	border: none;
+	margin: 20px;
+	color:#fff;
+	background-color: #333;
+}
+
+@media only screen and (min-width: 992px) {
+	.picker {
+		div {
+			position: absolute;
+			display:block;
+			top: 50px;
+		}
+		.blue,
+		.pink,
+		.yellow {
+			left: 50px;
+		}
+		.orange,
+		.purple,
+		.green {
+			right: 50px;
+		}
+		.blue,
+		.orange {
+			top: 200px;
+		}
+
+		.pink,
+		.purple {
+			top: 400-50px;
+		}
+	}
+}
+
+//
+// @media only screen and (max-width: 767px) {
+// 	input {
+// 		font-size: 10vw;
+// 		top: 250px;
+// 	}
+// }
+//
+// .extra-actions {
+// 	position: absolute;
+// }

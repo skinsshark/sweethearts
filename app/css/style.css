@@ -1,0 +1,226 @@
+.page-wrapper {
+  padding-top: 30px;
+}
+
+svg {
+  min-height: 500px;
+  height: 60vh;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 992px) {
+  svg {
+    width: 100%;
+  }
+}
+.pink {
+  background-color: #f7aecc;
+}
+
+#pink {
+  fill: #f7aecc;
+}
+#pink #Fill-1,
+#pink #Fill-2,
+#pink #Fill-3,
+#pink #Fill-9,
+#pink #Fill-15 {
+  fill: #c5145d;
+}
+#pink #Fill-6,
+#pink #Fill-12,
+#pink #Fill-18 {
+  fill: #f7aecc;
+}
+
+.purple {
+  background-color: #dabddb;
+}
+
+#purple {
+  fill: #dabddb;
+}
+#purple #Fill-1,
+#purple #Fill-2,
+#purple #Fill-3,
+#purple #Fill-9,
+#purple #Fill-15 {
+  fill: #824884;
+}
+#purple #Fill-6,
+#purple #Fill-12,
+#purple #Fill-18 {
+  fill: #dabddb;
+}
+
+.blue {
+  background-color: #98caeb;
+}
+
+#blue {
+  fill: #98caeb;
+}
+#blue #Fill-1,
+#blue #Fill-2,
+#blue #Fill-3,
+#blue #Fill-9,
+#blue #Fill-15 {
+  fill: #1e6899;
+}
+#blue #Fill-6,
+#blue #Fill-12,
+#blue #Fill-18 {
+  fill: #98caeb;
+}
+
+.green {
+  background-color: #a9dac7;
+}
+
+#green {
+  fill: #a9dac7;
+}
+#green #Fill-1,
+#green #Fill-2,
+#green #Fill-3,
+#green #Fill-9,
+#green #Fill-15 {
+  fill: #378064;
+}
+#green #Fill-6,
+#green #Fill-12,
+#green #Fill-18 {
+  fill: #a9dac7;
+}
+
+.orange {
+  background-color: #fbc084;
+}
+
+#orange {
+  fill: #fbc084;
+}
+#orange #Fill-1,
+#orange #Fill-2,
+#orange #Fill-3,
+#orange #Fill-9,
+#orange #Fill-15 {
+  fill: #ad5a06;
+}
+#orange #Fill-6,
+#orange #Fill-12,
+#orange #Fill-18 {
+  fill: #fbc084;
+}
+
+.yellow {
+  background-color: #fff58c;
+}
+
+#yellow {
+  fill: #fff58c;
+}
+#yellow #Fill-1,
+#yellow #Fill-2,
+#yellow #Fill-3,
+#yellow #Fill-9,
+#yellow #Fill-15 {
+  fill: #bfae00;
+}
+#yellow #Fill-6,
+#yellow #Fill-12,
+#yellow #Fill-18 {
+  fill: #fff58c;
+}
+
+body {
+  background-color: #eee;
+  text-align: center;
+}
+
+.picker div {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+}
+
+.picker {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+@media only screen and (max-width: 992px) {
+  .picker div {
+    width: 75px;
+    height: 75px;
+    margin: 8px;
+  }
+}
+.picker div:hover {
+  opacity: 0.7;
+  cursor: hand;
+}
+
+input {
+  text-align: center;
+  color: #CA0231;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 4vw;
+  font-family: Helvetica;
+}
+
+@media only screen and (max-width: 992px) {
+  input {
+    width: 55vw;
+    font-size: 6.5vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  input {
+    top: 25vh;
+    width: 55vw;
+    font-size: 6.5vw;
+  }
+}
+.fnc-button {
+  padding: 10px 20px;
+  border: none;
+  margin: 20px;
+  color: #fff;
+  background-color: #333;
+}
+
+@media only screen and (min-width: 992px) {
+  .picker div {
+    position: absolute;
+    display: block;
+    top: 50px;
+  }
+  .picker .blue,
+  .picker .pink,
+  .picker .yellow {
+    left: 50px;
+  }
+  .picker .orange,
+  .picker .purple,
+  .picker .green {
+    right: 50px;
+  }
+  .picker .blue,
+  .picker .orange {
+    top: 200px;
+  }
+  .picker .pink,
+  .picker .purple {
+    top: 350px;
+  }
+}
