@@ -87,10 +87,23 @@
 	  function App(props) {
 	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	
+	    _this.state = {
+	      value: 'u don\'t suck'
+	    };
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    return _this;
 	  }
 	
 	  _createClass(App, [{
+	    key: 'handleChange',
+	    value: function handleChange(e) {
+	      this.setState({
+	        value: e.target.value
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -102,8 +115,12 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
 	            { md: 12 },
-	            _react2.default.createElement(_Colours2.default, null),
-	            _react2.default.createElement(_Message2.default, null)
+	            _react2.default.createElement('input', { x: '0', y: '35', type: 'text',
+	              maxLength: '18',
+	              value: this.state.value,
+	              onChange: this.handleChange
+	            }),
+	            _react2.default.createElement(_Colours2.default, { value: this.state.value })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -42659,7 +42676,7 @@
 	    var _this = _possibleConstructorReturn(this, (Colours.__proto__ || Object.getPrototypeOf(Colours)).call(this, props));
 	
 	    _this.state = {
-	      colour: 'green'
+	      colour: 'grey'
 	    };
 	    return _this;
 	  }
@@ -42676,10 +42693,11 @@
 	    value: function render() {
 	      var _this2 = this;
 	
+	      var value = this.props.value;
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_Heart2.default, { colour: this.state.colour }),
+	        _react2.default.createElement(_Heart2.default, { colour: this.state.colour, value: value }),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'picker' },
@@ -42718,7 +42736,7 @@
   \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -42729,6 +42747,10 @@
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _Message = __webpack_require__(/*! ./Message */ 452);
+	
+	var _Message2 = _interopRequireDefault(_Message);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -42748,67 +42770,72 @@
 	    }
 	
 	    _createClass(Heart, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
-	            var colour = this.props.colour;
+	            var _props = this.props,
+	                colour = _props.colour,
+	                message = _props.message,
+	                value = _props.value;
+	
 	
 	            return _react2.default.createElement(
-	                "svg",
-	                { width: "784px", height: "749px", viewBox: "0 0 784 749", version: "1.1", id: colour },
+	                'svg',
+	                { width: '784px', height: '749px', viewBox: '0 0 784 749', version: '1.1', id: colour },
 	                _react2.default.createElement(
-	                    "defs",
+	                    'defs',
 	                    null,
-	                    _react2.default.createElement("polygon", { id: "path-1", points: "0 558.7 0 0.1 463.5998 0.1 463.5998 558.7 4.08562615e-15 558.7" }),
-	                    _react2.default.createElement("polygon", { id: "path-3", points: "0 558.7 0 0.1 231.7999 0.1 463.5998 0.1 463.5998 558.7 4.08562615e-15 558.7" }),
-	                    _react2.default.createElement("polygon", { id: "path-5", points: "464 0.1 464 558.7 0.4002 558.7 0.4002 0.1 464 0.1" }),
-	                    _react2.default.createElement("polygon", { id: "path-7", points: "232.2001 0.1 464 0.1 464 558.7 0.4002 558.7 0.4002 0.1" }),
-	                    _react2.default.createElement("polygon", { id: "path-9", points: "582.9999 461 0.3999 461 0.3999 0.3004 582.9999 0.3004 582.9999 461" })
+	                    _react2.default.createElement('polygon', { id: 'path-1', points: '0 558.7 0 0.1 463.5998 0.1 463.5998 558.7 4.08562615e-15 558.7' }),
+	                    _react2.default.createElement('polygon', { id: 'path-3', points: '0 558.7 0 0.1 231.7999 0.1 463.5998 0.1 463.5998 558.7 4.08562615e-15 558.7' }),
+	                    _react2.default.createElement('polygon', { id: 'path-5', points: '464 0.1 464 558.7 0.4002 558.7 0.4002 0.1 464 0.1' }),
+	                    _react2.default.createElement('polygon', { id: 'path-7', points: '232.2001 0.1 464 0.1 464 558.7 0.4002 558.7 0.4002 0.1' }),
+	                    _react2.default.createElement('polygon', { id: 'path-9', points: '582.9999 461 0.3999 461 0.3999 0.3004 582.9999 0.3004 582.9999 461' })
 	                ),
 	                _react2.default.createElement(
-	                    "g",
-	                    { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd" },
+	                    'g',
+	                    { id: 'Page-1', stroke: 'none', strokeWidth: '1', fill: 'none', fillRule: 'evenodd' },
 	                    _react2.default.createElement(
-	                        "g",
-	                        { transform: "translate(0.000000, -1.000000)" },
-	                        _react2.default.createElement("polygon", { id: "Fill-1", points: "771.946 356.531 784 356.531 784 280.3 771.946 280.3" }),
-	                        _react2.default.createElement("polygon", { id: "Fill-2", points: "0.057 356.531 12.111 356.531 12.111 280.3 0.057 280.3" }),
+	                        'g',
+	                        { transform: 'translate(0.000000, -1.000000)' },
+	                        _react2.default.createElement('polygon', { id: 'Fill-1', points: '771.946 356.531 784 356.531 784 280.3 771.946 280.3' }),
+	                        _react2.default.createElement('polygon', { id: 'Fill-2', points: '0.057 356.531 12.111 356.531 12.111 280.3 0.057 280.3' }),
 	                        _react2.default.createElement(
-	                            "g",
-	                            { id: "Group-20", transform: "translate(0.000000, 0.900000)" },
+	                            'g',
+	                            { id: 'Group-20', transform: 'translate(0.000000, 0.900000)' },
 	                            _react2.default.createElement(
-	                                "g",
-	                                { id: "Group-5", transform: "translate(0.000000, 70.000000)" },
-	                                _react2.default.createElement("g", { id: "Clip-4" }),
-	                                _react2.default.createElement("path", { d: "M231.7998,0.1 C359.8198,0.1 463.5998,125.147 463.5998,279.4 C463.5998,433.653 359.8198,558.7 231.7998,558.7 C103.7798,558.7 -0.0002,433.653 -0.0002,279.4 C-0.0002,125.147 103.7798,0.1 231.7998,0.1", id: "Fill-3" })
+	                                'g',
+	                                { id: 'Group-5', transform: 'translate(0.000000, 70.000000)' },
+	                                _react2.default.createElement('g', { id: 'Clip-4' }),
+	                                _react2.default.createElement('path', { d: 'M231.7998,0.1 C359.8198,0.1 463.5998,125.147 463.5998,279.4 C463.5998,433.653 359.8198,558.7 231.7998,558.7 C103.7798,558.7 -0.0002,433.653 -0.0002,279.4 C-0.0002,125.147 103.7798,0.1 231.7998,0.1', id: 'Fill-3' })
 	                            ),
 	                            _react2.default.createElement(
-	                                "g",
-	                                { id: "Group-8" },
-	                                _react2.default.createElement("g", { id: "Clip-7" }),
-	                                _react2.default.createElement("path", { d: "M231.7998,0.1 C359.8198,0.1 463.5998,125.147 463.5998,279.4 C463.5998,433.653 359.8198,558.7 231.7998,558.7 C103.7798,558.7 -0.0002,433.653 -0.0002,279.4 C-0.0002,125.147 103.7798,0.1 231.7998,0.1", id: "Fill-6" })
+	                                'g',
+	                                { id: 'Group-8' },
+	                                _react2.default.createElement('g', { id: 'Clip-7' }),
+	                                _react2.default.createElement('path', { d: 'M231.7998,0.1 C359.8198,0.1 463.5998,125.147 463.5998,279.4 C463.5998,433.653 359.8198,558.7 231.7998,558.7 C103.7798,558.7 -0.0002,433.653 -0.0002,279.4 C-0.0002,125.147 103.7798,0.1 231.7998,0.1', id: 'Fill-6' })
 	                            ),
 	                            _react2.default.createElement(
-	                                "g",
-	                                { id: "Group-11", transform: "translate(320.000000, 70.000000)" },
-	                                _react2.default.createElement("g", { id: "Clip-10" }),
-	                                _react2.default.createElement("path", { d: "M232.2002,0.1 C360.2202,0.1 464.0002,125.147 464.0002,279.4 C464.0002,433.653 360.2202,558.7 232.2002,558.7 C104.1802,558.7 0.4002,433.653 0.4002,279.4 C0.4002,125.147 104.1802,0.1 232.2002,0.1", id: "Fill-9" })
+	                                'g',
+	                                { id: 'Group-11', transform: 'translate(320.000000, 70.000000)' },
+	                                _react2.default.createElement('g', { id: 'Clip-10' }),
+	                                _react2.default.createElement('path', { d: 'M232.2002,0.1 C360.2202,0.1 464.0002,125.147 464.0002,279.4 C464.0002,433.653 360.2202,558.7 232.2002,558.7 C104.1802,558.7 0.4002,433.653 0.4002,279.4 C0.4002,125.147 104.1802,0.1 232.2002,0.1', id: 'Fill-9' })
 	                            ),
 	                            _react2.default.createElement(
-	                                "g",
-	                                { id: "Group-14", transform: "translate(320.000000, 0.000000)" },
-	                                _react2.default.createElement("g", { id: "Clip-13" }),
-	                                _react2.default.createElement("path", { d: "M232.2002,0.1 C360.2202,0.1 464.0002,125.147 464.0002,279.4 C464.0002,433.653 360.2202,558.7 232.2002,558.7 C104.1802,558.7 0.4002,433.653 0.4002,279.4 C0.4002,125.147 104.1802,0.1 232.2002,0.1", id: "Fill-12" })
+	                                'g',
+	                                { id: 'Group-14', transform: 'translate(320.000000, 0.000000)' },
+	                                _react2.default.createElement('g', { id: 'Clip-13' }),
+	                                _react2.default.createElement('path', { d: 'M232.2002,0.1 C360.2202,0.1 464.0002,125.147 464.0002,279.4 C464.0002,433.653 360.2202,558.7 232.2002,558.7 C104.1802,558.7 0.4002,433.653 0.4002,279.4 C0.4002,125.147 104.1802,0.1 232.2002,0.1', id: 'Fill-12' })
 	                            ),
 	                            _react2.default.createElement(
-	                                "g",
-	                                { id: "Group-17", transform: "translate(100.000000, 288.000000)" },
-	                                _react2.default.createElement("g", { id: "Clip-16" }),
-	                                _react2.default.createElement("path", { d: "M0.3999,291.5004 L291.5999,0.3004 L582.9999,291.6994 C582.9999,291.6994 437.3999,461.1004 291.6999,461.0004 C146.0999,461.0004 0.3999,291.5004 0.3999,291.5004", id: "Fill-15" })
+	                                'g',
+	                                { id: 'Group-17', transform: 'translate(100.000000, 288.000000)' },
+	                                _react2.default.createElement('g', { id: 'Clip-16' }),
+	                                _react2.default.createElement('path', { d: 'M0.3999,291.5004 L291.5999,0.3004 L582.9999,291.6994 C582.9999,291.6994 437.3999,461.1004 291.6999,461.0004 C146.0999,461.0004 0.3999,291.5004 0.3999,291.5004', id: 'Fill-15' })
 	                            ),
-	                            _react2.default.createElement("path", { d: "M100.3999,509.5004 L391.5999,218.3004 L682.9999,509.6994 C682.9999,509.6994 537.3999,679.1004 391.6999,679.0004 C246.0999,679.0004 100.3999,509.5004 100.3999,509.5004", id: "Fill-18" })
+	                            _react2.default.createElement('path', { d: 'M100.3999,509.5004 L391.5999,218.3004 L682.9999,509.6994 C682.9999,509.6994 537.3999,679.1004 391.6999,679.0004 C246.0999,679.0004 100.3999,509.5004 100.3999,509.5004', id: 'Fill-18' })
 	                        )
 	                    )
-	                )
+	                ),
+	                _react2.default.createElement(_Message2.default, { value: value })
 	            );
 	        }
 	    }]);
@@ -42857,7 +42884,12 @@
 	  _createClass(Message, [{
 	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement("input", { x: "0", y: "35", type: "text", maxLength: "18", placeholder: "Type Here" });
+	      var value = this.props.value;
+	      return _react2.default.createElement(
+	        "text",
+	        { x: "392", y: "230", className: "msg" },
+	        value
+	      );
 	    }
 	  }]);
 	

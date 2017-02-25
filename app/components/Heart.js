@@ -1,11 +1,12 @@
 import React from 'react';
+import Message from './Message';
 
 class Heart extends React.Component {
   constructor(props) {
     super(props);
   }
   render () {
-    const colour = this.props.colour;
+    const { colour, message, value } = this.props;
 
     return (
       <svg width="784px" height="749px" viewBox="0 0 784 749" version="1.1" id={colour}>
@@ -45,6 +46,7 @@ class Heart extends React.Component {
                   </g>
               </g>
           </g>
+          <Message value={value} />
       </svg>
     );
   }

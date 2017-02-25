@@ -13,24 +13,40 @@ svg {
     width: 100%;
   }
 }
+#grey {
+  fill: #d8d8d8;
+}
+#grey #Fill-1,
+#grey #Fill-2,
+#grey #Fill-3,
+#grey #Fill-9,
+#grey #Fill-15 {
+  fill: #727272;
+}
+#grey #Fill-6,
+#grey #Fill-12,
+#grey #Fill-18 {
+  fill: #d8d8d8;
+}
+
 .pink {
-  background-color: #f7aecc;
+  background-color: #f6c5db;
 }
 
 #pink {
-  fill: #f7aecc;
+  fill: #f6c5db;
 }
 #pink #Fill-1,
 #pink #Fill-2,
 #pink #Fill-3,
 #pink #Fill-9,
 #pink #Fill-15 {
-  fill: #c5145d;
+  fill: #cf206f;
 }
 #pink #Fill-6,
 #pink #Fill-12,
 #pink #Fill-18 {
-  fill: #f7aecc;
+  fill: #f6c5db;
 }
 
 .purple {
@@ -136,6 +152,7 @@ svg {
 body {
   background-color: #eee;
   text-align: center;
+  background-image: url("../app/images/background.png");
 }
 
 .picker div {
@@ -146,7 +163,6 @@ body {
 
 .picker {
   margin: 0 auto;
-  width: 80vw;
 }
 
 @media only screen and (max-width: 992px) {
@@ -161,34 +177,30 @@ body {
   cursor: hand;
 }
 
-input {
+.msg {
   text-align: center;
-  color: #CA0231;
+  text-anchor: middle;
+  fill: #CA0231;
   background-color: transparent;
   border: none;
   position: absolute;
-  width: 30vw;
+  width: 200px;
   height: auto;
-  top: 125px;
-  left: 0;
-  right: 0;
   margin: 0 auto;
   text-transform: uppercase;
-  font-size: 4vw;
+  font-size: 84px;
   font-family: Helvetica;
 }
 
 @media only screen and (max-width: 992px) {
-  input {
+  .msg {
     width: 55vw;
-    font-size: 6.5vw;
   }
 }
 @media only screen and (max-width: 480px) {
-  input {
-    top: 25vh;
+  .msg {
     width: 55vw;
-    font-size: 6.5vw;
+    font-size: 20vw;
   }
 }
 .fnc-button {

@@ -5,7 +5,7 @@ class Colours extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      colour: 'green'
+      colour: 'grey'
     };
   }
 
@@ -16,9 +16,10 @@ class Colours extends React.Component {
   }
 
   render() {
+    const value = this.props.value;
     return (
       <div>
-        <Heart colour={this.state.colour} />
+        <Heart colour={this.state.colour} value={value} />
         <div className="picker">
           <div className="blue" onClick={() => { this.handleClick("blue") }}></div>
           <div className="pink" onClick={() => { this.handleClick("pink") }}></div>

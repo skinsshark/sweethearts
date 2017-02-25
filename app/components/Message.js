@@ -5,8 +5,9 @@ class Message extends React.Component {
     super(props);
   }
   render () {
+    const value = this.props.value;
     return (
-      <input x="0" y="35" type="text" maxLength="18" placeholder="Type Here"/>
+      <text x="392" y="230" className="msg">{value}</text>
     );
   }
 }

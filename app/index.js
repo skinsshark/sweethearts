@@ -8,6 +8,16 @@ import Button from './components/Button';
 class App extends React.Component {
   constructor( props ) {
     super(props);
+    this.state = {
+      value: 'u don\'t suck'
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      value: e.target.value
+    });
   }
 
   render() {
@@ -15,8 +25,12 @@ class App extends React.Component {
       <Grid className="page-wrapper">
         <Row>
           <Col md={12}>
-            <Colours />
-            <Message />
+            <input x="0" y="35" type="text"
+              maxLength="18"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+            <Colours value={this.state.value} />
           </Col>
           <div className="extra-actions">
             <Button fn="Save" />
